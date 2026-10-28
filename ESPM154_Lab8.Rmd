@@ -216,8 +216,9 @@ After getting the VCF object with only the outlier SNPs (those with a significan
 
 First, calculate the genetic distances for our data and assign them to an object named 'vos_gendist' as a distance matrix.
 ```{r vos gendist, warning=FALSE}
-vos_gendist <- gen_dist(vos_vcf_outliers, dist_type = "euclidean")
-vos_gendist <- as.matrix(vos_gendist)
+vos_outlier_dos <- vcf_to_dosage(vos_vcf_outliers) # Convert outlier VCF to dosage matrix
+vos_gendist <- stats::dist(vos_outlier_dos, method = "euclidean") # Calculate `dist` object from dosage matrix
+vos_gendist <- as.matrix(vos_gendist) # Convert `dist` object to matrix
 ```
 
 Then, we can run the GDM analysis.
