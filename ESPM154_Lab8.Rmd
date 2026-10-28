@@ -33,7 +33,7 @@ rm(list = ls())
 Load required packages...
 ```{r packages, include=FALSE}
 # Make a list of the packages we need, check whether they're installed, and install the ones we're missing...
-required.pkg <- c("terra", "vegan", "dplyr", "geodata", "vcfR", "sf", "ggplot2", "maps", "viridis")
+required.pkg <- c("terra", "vegan", "dplyr", "geodata", "vcfR", "sf", "ggplot2", "maps", "viridis", "ecodist")
 pkgs.not.installed <- required.pkg[!sapply(required.pkg, function(p) require(p, character.only=T))]
 if (length(pkgs.not.installed) > 0) install.packages(pkgs.not.installed, dependencies=TRUE)
 
