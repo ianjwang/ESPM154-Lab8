@@ -30,7 +30,7 @@ knitr::opts_chunk$set(echo = TRUE)
 rm(list = ls()) 
 ```
 
-Load required packages...
+Load required packages. Keep an eye on your console, because RStudio will ask if you want to updated packages -- select `n` when it does this so that you retain the packages we have installed on DataHub already.
 ```{r packages, include=FALSE}
 # Make a list of the packages we need, check whether they're installed, and install the ones we're missing...
 required.pkg <- c("terra", "vegan", "dplyr", "geodata", "vcfR", "sf", "ggplot2", "maps", "viridis", "ecodist")
