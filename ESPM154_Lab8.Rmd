@@ -140,7 +140,7 @@ vos_mod <- rda_run(gen = vos_gen, env = vos_env)
 
 Now that we have the RDA model, we can discover outlier SNPs (our loci of interest) that have significant associations with our environmental variables. For calculating genomic vulnerability, we want to include only the SNPs that are significantly associated with environmental variables, we will set the significance threshold to 0.05 (sig = 0.05).
 ```{r candidate snps}
-# We will test for significance at a p-value threshold of 0.005
+# We will test for significance at a p-value threshold of 0.05
 vos_outliers <- rda_getoutliers(vos_mod, sig = 0.05, plot = FALSE)
 
 # How many outlier SNPs were detected?
@@ -269,7 +269,7 @@ van_coords <-
 Next, use the code block below to:
 1. Convert the vcf to a dosage matrix (use the `vcf_to_dosage()` function)
 2. Extract the environmental variables at the sampling coordinates (use the `extract()` function)
-3. Run RDA (use the `rda_run()` function) and apply a significance threshold of 0.005
+3. Run RDA (use the `rda_run()` function) and apply a significance threshold of 0.05
 4. Identify outlier SNPs (use the `rda_getoutliers()` function)
 5. Determine the number of outlier SNPs for the B. vancouverensis dataset
 ```{r van rda}
